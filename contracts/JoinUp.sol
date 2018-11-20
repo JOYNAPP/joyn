@@ -43,14 +43,13 @@ contract JoinUp {
         buyers[buyer].weight = 1;
     }
 
-    function buy(uint proposal) public {
+    function buy() public {
         Buyer storage sender = buyers[msg.sender];
         require(!sender.bought, "Already bought.");
         require(sender.weight != 0, "Has no right to buy");
         require(msg.sender != eventcreator, "event creator buy implicit");
         sender.bought = true;
-        sender.buy = proposal;
-        proposals[proposal].buyCount += sender.weight;
+        proposals[0].buyCount += sender.weight;
     }
 
     function winningProposal() public view

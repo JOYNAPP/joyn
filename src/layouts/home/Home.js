@@ -6,7 +6,7 @@ class Home extends Component {
   render() {
 
     console.log('JoinUp in Home from props', this.props.JoinUp);
-
+    console.log('accounts', this.props.accounts)
 
     return (
       <main className="container">
@@ -21,8 +21,29 @@ class Home extends Component {
 
           <div className="pure-u-1-1">
             <h2>Active Account</h2>
-            <AccountData accountIndex="0" units="ether" precision="3" />          
+            <h3>Owner</h3>
+            <AccountData accountIndex="0" units="ether" precision="3" />    
+            <h3>Buyers</h3>
+            <h4>1</h4>      
             <AccountData accountIndex="1" units="ether" precision="3" />
+            <h4>2</h4> 
+            <AccountData accountIndex="2" units="ether" precision="3" />
+            <h4>3</h4> 
+            <AccountData accountIndex="3" units="ether" precision="3" />
+            <h4>4</h4> 
+            <AccountData accountIndex="4" units="ether" precision="3" />
+
+            <h4>Lemme Buy!!!!! (Give Right To Buy)</h4>
+            <ContractForm contract="JoinUp" method="giveRightToBuy" />
+            <h2>IT ME</h2>
+            <ContractData contract="JoinUp" method="eventcreator" />
+            {/* <ContractData contract="JoinUp" method="proposals" /> */}
+            {/* <ContractData contract="JoinUp" method="giveRightToBuy" /> */}
+
+            <h4>Buy!!!! (.buy)</h4>
+
+            <ContractForm contract="JoinUp" method="buy" />
+            {/* <ContractData contract="JoinUp" method="buy" /> */}
 
 
             <br/><br/>
